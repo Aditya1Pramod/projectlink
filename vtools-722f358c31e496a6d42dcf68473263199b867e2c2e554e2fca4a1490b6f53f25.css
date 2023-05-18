@@ -1,0 +1,1277 @@
+/*!
+ * Datetimepicker for Bootstrap 3
+ * version : 4.17.47
+ * https://github.com/Eonasdan/bootstrap-datetimepicker/
+ */
+
+.bootstrap-datetimepicker-widget {
+  list-style: none;
+}
+.bootstrap-datetimepicker-widget.dropdown-menu {
+  display: block;
+  margin: 2px 0;
+  padding: 4px;
+  width: 19em;
+}
+@media (min-width: 768px) {
+  .bootstrap-datetimepicker-widget.dropdown-menu.timepicker-sbs {
+    width: 38em;
+  }
+}
+@media (min-width: 992px) {
+  .bootstrap-datetimepicker-widget.dropdown-menu.timepicker-sbs {
+    width: 38em;
+  }
+}
+@media (min-width: 1200px) {
+  .bootstrap-datetimepicker-widget.dropdown-menu.timepicker-sbs {
+    width: 38em;
+  }
+}
+.bootstrap-datetimepicker-widget.dropdown-menu:before,
+.bootstrap-datetimepicker-widget.dropdown-menu:after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+}
+.bootstrap-datetimepicker-widget.dropdown-menu.bottom:before {
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  top: -7px;
+  left: 7px;
+}
+.bootstrap-datetimepicker-widget.dropdown-menu.bottom:after {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid white;
+  top: -6px;
+  left: 8px;
+}
+.bootstrap-datetimepicker-widget.dropdown-menu.top:before {
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #ccc;
+  border-top-color: rgba(0, 0, 0, 0.2);
+  bottom: -7px;
+  left: 6px;
+}
+.bootstrap-datetimepicker-widget.dropdown-menu.top:after {
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid white;
+  bottom: -6px;
+  left: 7px;
+}
+.bootstrap-datetimepicker-widget.dropdown-menu.pull-right:before {
+  left: auto;
+  right: 6px;
+}
+.bootstrap-datetimepicker-widget.dropdown-menu.pull-right:after {
+  left: auto;
+  right: 7px;
+}
+.bootstrap-datetimepicker-widget .list-unstyled {
+  margin: 0;
+}
+.bootstrap-datetimepicker-widget a[data-action] {
+  padding: 6px 0;
+}
+.bootstrap-datetimepicker-widget a[data-action]:active {
+  box-shadow: none;
+}
+.bootstrap-datetimepicker-widget .timepicker-hour,
+.bootstrap-datetimepicker-widget .timepicker-minute,
+.bootstrap-datetimepicker-widget .timepicker-second {
+  width: 54px;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin: 0;
+}
+.bootstrap-datetimepicker-widget button[data-action] {
+  padding: 6px;
+}
+.bootstrap-datetimepicker-widget .btn[data-action="incrementHours"]::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  content: "Increment Hours";
+}
+.bootstrap-datetimepicker-widget .btn[data-action="incrementMinutes"]::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  content: "Increment Minutes";
+}
+.bootstrap-datetimepicker-widget .btn[data-action="decrementHours"]::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  content: "Decrement Hours";
+}
+.bootstrap-datetimepicker-widget .btn[data-action="decrementMinutes"]::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  content: "Decrement Minutes";
+}
+.bootstrap-datetimepicker-widget .btn[data-action="showHours"]::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  content: "Show Hours";
+}
+.bootstrap-datetimepicker-widget .btn[data-action="showMinutes"]::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  content: "Show Minutes";
+}
+.bootstrap-datetimepicker-widget .btn[data-action="togglePeriod"]::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  content: "Toggle AM/PM";
+}
+.bootstrap-datetimepicker-widget .btn[data-action="clear"]::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  content: "Clear the picker";
+}
+.bootstrap-datetimepicker-widget .btn[data-action="today"]::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  content: "Set the date to today";
+}
+.bootstrap-datetimepicker-widget .picker-switch {
+  text-align: center;
+}
+.bootstrap-datetimepicker-widget .picker-switch::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  content: "Toggle Date and Time Screens";
+}
+.bootstrap-datetimepicker-widget .picker-switch td {
+  padding: 0;
+  margin: 0;
+  height: auto;
+  width: auto;
+  line-height: inherit;
+}
+.bootstrap-datetimepicker-widget .picker-switch td span {
+  line-height: 2.5;
+  height: 2.5em;
+  width: 100%;
+}
+.bootstrap-datetimepicker-widget table {
+  width: 100%;
+  margin: 0;
+}
+.bootstrap-datetimepicker-widget table td,
+.bootstrap-datetimepicker-widget table th {
+  text-align: center;
+  border-radius: 4px;
+}
+.bootstrap-datetimepicker-widget table th {
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
+}
+.bootstrap-datetimepicker-widget table th.picker-switch {
+  width: 145px;
+}
+.bootstrap-datetimepicker-widget table th.disabled,
+.bootstrap-datetimepicker-widget table th.disabled:hover {
+  background: none;
+  color: #777777;
+  cursor: not-allowed;
+}
+.bootstrap-datetimepicker-widget table th.prev::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  content: "Previous Month";
+}
+.bootstrap-datetimepicker-widget table th.next::after {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  content: "Next Month";
+}
+.bootstrap-datetimepicker-widget table thead tr:first-child th {
+  cursor: pointer;
+}
+.bootstrap-datetimepicker-widget table thead tr:first-child th:hover {
+  background: #eeeeee;
+}
+.bootstrap-datetimepicker-widget table td {
+  height: 54px;
+  line-height: 54px;
+  width: 54px;
+}
+.bootstrap-datetimepicker-widget table td.cw {
+  font-size: .8em;
+  height: 20px;
+  line-height: 20px;
+  color: #777777;
+}
+.bootstrap-datetimepicker-widget table td.day {
+  height: 20px;
+  line-height: 20px;
+  width: 20px;
+}
+.bootstrap-datetimepicker-widget table td.day:hover,
+.bootstrap-datetimepicker-widget table td.hour:hover,
+.bootstrap-datetimepicker-widget table td.minute:hover,
+.bootstrap-datetimepicker-widget table td.second:hover {
+  background: #eeeeee;
+  cursor: pointer;
+}
+.bootstrap-datetimepicker-widget table td.old,
+.bootstrap-datetimepicker-widget table td.new {
+  color: #777777;
+}
+.bootstrap-datetimepicker-widget table td.today {
+  position: relative;
+}
+.bootstrap-datetimepicker-widget table td.today:before {
+  content: '';
+  display: inline-block;
+  border: solid transparent;
+  border-width: 0 0 7px 7px;
+  border-bottom-color: #337ab7;
+  border-top-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+}
+.bootstrap-datetimepicker-widget table td.active,
+.bootstrap-datetimepicker-widget table td.active:hover {
+  background-color: #337ab7;
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.bootstrap-datetimepicker-widget table td.active.today:before {
+  border-bottom-color: #fff;
+}
+.bootstrap-datetimepicker-widget table td.disabled,
+.bootstrap-datetimepicker-widget table td.disabled:hover {
+  background: none;
+  color: #777777;
+  cursor: not-allowed;
+}
+.bootstrap-datetimepicker-widget table td span {
+  display: inline-block;
+  width: 54px;
+  height: 54px;
+  line-height: 54px;
+  margin: 2px 1.5px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.bootstrap-datetimepicker-widget table td span:hover {
+  background: #eeeeee;
+}
+.bootstrap-datetimepicker-widget table td span.active {
+  background-color: #337ab7;
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.bootstrap-datetimepicker-widget table td span.old {
+  color: #777777;
+}
+.bootstrap-datetimepicker-widget table td span.disabled,
+.bootstrap-datetimepicker-widget table td span.disabled:hover {
+  background: none;
+  color: #777777;
+  cursor: not-allowed;
+}
+.bootstrap-datetimepicker-widget.usetwentyfour td.hour {
+  height: 27px;
+  line-height: 27px;
+}
+.bootstrap-datetimepicker-widget.wider {
+  width: 21em;
+}
+.bootstrap-datetimepicker-widget .datepicker-decades .decade {
+  line-height: 1.8em !important;
+}
+.input-group.date .input-group-addon {
+  cursor: pointer;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+/* Base styles related to the IEEE look-and-feel that need to be applied on top of the Raleway template can go here */
+
+
+#bg-boxed {
+    /* Existing styles: 
+    background-image: url(../images/patterns/pattern2.png);
+    background-repeat: repeat;
+    height: 100%;
+    */
+    background-color: #E5E3E4;
+    background: url(/assets/vtools_ui_img/ieee/home-back-17ca4e674a7daa94064baf4b0f5cb58acff22342e4f43a2939f6f597a186a0e4.jpg) repeat-x scroll 0 0 #E5E3E4;
+}
+
+
+/* IEEE Color Palette (http://www.ieee.org/about/webteam/styleguide/branding.html) */
+/* Good von: http://paletton.com/ */
+/* Bright */
+/* Dark */
+/* Base styles related to the vTools look-and-feel that need to be applied on top of the Raleway template can go here */
+
+/* ------------------------------------------------------------- */
+/* Create full-page height, no matter what content exists */
+/*  This is mussing up the spacing of the page content container :( */
+
+/* html, body { height: 100%; margin: 0; padding: 0; } 
+
+#bg-boxed .boxed { display: table; }
+.main-content { display: table-row; height: 100%; }
+.main-content-body { display: table-cell; }
+*/
+
+/* ------------------------------------------------------------- */
+/* Instead, we're just setting a bg color to the same as the bottom
+ * of the bg image, and a minimum height for the content area */
+
+
+html, body {
+	background-color: #E5E3E4 !important;
+	font-weight: 500 !important;
+}
+.main-content { 
+	min-height: 400px !important;
+}
+/* Content (buttons) at the very bottom of the page content were getting cut off */
+.content-40mg {
+	padding-bottom: 20px;
+}
+
+/* ------------------------------------------------------------- */
+/* HEADER */
+/* Lessen the height that the nav uses, underline active nav item */
+
+#_vtools_app_nav li a {
+	text-transform: uppercase;
+	padding-top:6px !important;
+	padding-bottom:4px !important;
+}
+
+#_vtools_app_nav .container-fluid {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+.header {
+	border: 0 !important;
+	border-bottom-width: 0px !important;
+	border-bottom-style: none !important;
+	border-bottom: none !important;
+}
+
+.navbar {
+	min-height: auto !important;
+}
+
+/* Navbar comes with a grey background color.. no thanks */
+.navbar-default {
+	background-color: transparent !important;
+}
+/* Trying to get navbar to take up a lil less vertical space :-/ */
+.navbar-brand {
+	height: 40px !important;
+	padding-top: 30px !important;
+}
+.navbar-header {
+	height: auto !important;
+}
+.navbar-header button {
+	/*margin-top: 0 !important;*/
+}
+
+/* Raleway has a set 80px height.  This is causing the color bar just below the nav to be
+    hidden.  Removing the set height is bringing it back :-/ */
+.navbar-wrapper {
+    height: auto !important;
+}
+
+/* Thinner breadcrumb bar, float right */
+._header_breadbrumb_bar {
+	clear:both !important;
+	padding-top: 2px !important;
+	padding-bottom: 2px !important;
+}
+._header_breadcrumb_bar ._breadcrumb_container {
+	/* Why isn't this being applied?!?!  *sigh*, applying in-line.. */
+	float:right;
+}
+._header_breadcrumb_bar ._breadcrumb_container .breadcrumb {
+	margin-top: 4px !important;
+}
+
+.vtools-main-nav-item {
+	/* font-weight:bold; nah, not bold */
+	padding:3px;
+	border-width:3px;
+	border-left:0;
+	border-right:0;
+	border-top:0;
+	border-style:solid;
+}
+
+/* ------------------------------------------------------------- */
+/* FOOTER */
+
+.footer-light {
+	padding: 5px !important;
+	border-top: none !important;
+}
+
+/* ------------------------------------------------------------- */
+/* No right edge for the 'Sign In' link area? */
+
+/* Leaving this out for now:
+.topbar-list:last-child {
+	border-right:0px !important;
+} */
+
+/* ------------------------------------------------------------- */
+/* Adjustments to the config/demo widget */
+
+.demo_changer {
+	top: 150px !important;
+	left: -311px;
+}
+.demo_changer .form_holder {
+	width: 310px;
+}
+
+/* ------------------------------------------------------------- */
+/* Adjustments to tooltips */
+
+.tooltip-inner {
+	color: black;
+    background-color:white;
+    border: 1px solid grey;
+    text-align:left;
+}
+
+/* ------------------------------------------------------------- */
+/* Bootstrap has big pagination margins.. */
+
+.pagination {
+	margin: 5 !important;
+}
+
+/* IEEE Color Palette (http://www.ieee.org/about/webteam/styleguide/branding.html) */
+/* Good von: http://paletton.com/ */
+/* Bright */
+/* Dark */
+.ieee_primary_blue {
+  color: #006699 !important; }
+
+.ieee_primary_blue_bg {
+  background-color: #006699 !important; }
+
+.ieee_primary_blue_bt1 {
+  border-top: 1px solid #006699 !important; }
+
+.ieee_primary_blue_bt2 {
+  border-top: 2px solid #006699 !important; }
+
+.ieee_primary_blue_bb1 {
+  border-bottom: 1px solid #006699 !important; }
+
+.ieee_primary_blue_bb2 {
+  border-bottom: 2px solid #006699 !important; }
+
+.ieee_primary_blue_bl1 {
+  border-left: 1px solid #006699 !important; }
+
+.ieee_primary_blue_bl2 {
+  border-left: 2px solid #006699 !important; }
+
+.ieee_primary_blue_br1 {
+  border-right: 1px solid #006699 !important; }
+
+.ieee_primary_blue_br2 {
+  border-right: 2px solid #006699 !important; }
+
+/* Fades */
+.ieee_primary_blue_fade1 {
+  color: #3285AD !important; }
+
+.ieee_primary_blue_fade1_bg {
+  background-color: #3285AD !important; }
+
+.ieee_primary_blue_fade2 {
+  color: #66A3C0 !important; }
+
+.ieee_primary_blue_fade2_bg {
+  background-color: #66A3C0 !important; }
+
+.ieee_primary_blue_fade3 {
+  color: #99C2D6 !important; }
+
+.ieee_primary_blue_fade3_bg {
+  background-color: #99C2D6 !important; }
+
+.ieee_primary_blue_fade4 {
+  color: #CEE0EC !important; }
+
+.ieee_primary_blue_fade4_bg {
+  background-color: #CEE0EC !important; }
+
+/* Bright */
+.ieee_bright_orange {
+  color: #E37222 !important; }
+
+.ieee_bright_orange_bg {
+  background-color: #E37222 !important; }
+
+.ieee_bright_orange_bt1 {
+  border-top: 1px solid #E37222 !important; }
+
+.ieee_bright_orange_bt2 {
+  border-top: 2px solid #E37222 !important; }
+
+.ieee_bright_orange_bb1 {
+  border-bottom: 1px solid #E37222 !important; }
+
+.ieee_bright_orange_bb2 {
+  border-bottom: 2px solid #E37222 !important; }
+
+.ieee_bright_orange_bl1 {
+  border-left: 1px solid #E37222 !important; }
+
+.ieee_bright_orange_bl2 {
+  border-left: 2px solid #E37222 !important; }
+
+.ieee_bright_orange_br1 {
+  border-right: 1px solid #E37222 !important; }
+
+.ieee_bright_orange_br2 {
+  border-right: 2px solid #E37222 !important; }
+
+.ieee_bright_orange_fade1_bg {
+  background-color: #FF7F02 !important; }
+
+.ieee_bright_orange_fade4_bg {
+  background-color: #FFF9F3 !important; }
+
+.ieee_bright_yellow {
+  color: #FFCC33 !important; }
+
+.ieee_bright_yellow_bg {
+  background-color: #FFCC33 !important; }
+
+.ieee_bright_yellow_bt1 {
+  border-top: 1px solid #FFCC33 !important; }
+
+.ieee_bright_yellow_bt2 {
+  border-top: 2px solid #FFCC33 !important; }
+
+.ieee_bright_yellow_bb1 {
+  border-bottom: 1px solid #FFCC33 !important; }
+
+.ieee_bright_yellow_bb2 {
+  border-bottom: 2px solid #FFCC33 !important; }
+
+.ieee_bright_yellow_bl1 {
+  border-left: 1px solid #FFCC33 !important; }
+
+.ieee_bright_yellow_bl2 {
+  border-left: 2px solid #FFCC33 !important; }
+
+.ieee_bright_yellow_br1 {
+  border-right: 1px solid #FFCC33 !important; }
+
+.ieee_bright_yellow_br2 {
+  border-right: 2px solid #FFCC33 !important; }
+
+.ieee_bright_yellow_fade1_bg {
+  background-color: #EAA32E !important; }
+
+.ieee_bright_yellow_fade4_bg {
+  background-color: #FFFCF6 !important; }
+
+.ieee_bright_lime {
+  color: #66CC33 !important; }
+
+.ieee_bright_lime_bg {
+  background-color: #66CC33 !important; }
+
+.ieee_bright_lime_bt1 {
+  border-top: 1px solid #66CC33 !important; }
+
+.ieee_bright_lime_bt2 {
+  border-top: 2px solid #66CC33 !important; }
+
+.ieee_bright_lime_bb1 {
+  border-bottom: 1px solid #66CC33 !important; }
+
+.ieee_bright_lime_bb2 {
+  border-bottom: 2px solid #66CC33 !important; }
+
+.ieee_bright_lime_bl1 {
+  border-left: 1px solid #66CC33 !important; }
+
+.ieee_bright_lime_bl2 {
+  border-left: 2px solid #66CC33 !important; }
+
+.ieee_bright_lime_br1 {
+  border-right: 1px solid #66CC33 !important; }
+
+.ieee_bright_lime_br2 {
+  border-right: 2px solid #66CC33 !important; }
+
+.ieee_bright_green {
+  color: #008542 !important; }
+
+.ieee_bright_green_bg {
+  background-color: #008542 !important; }
+
+.ieee_bright_green_bt1 {
+  border-top: 1px solid #008542 !important; }
+
+.ieee_bright_green_bt2 {
+  border-top: 2px solid #008542 !important; }
+
+.ieee_bright_green_bb1 {
+  border-bottom: 1px solid #008542 !important; }
+
+.ieee_bright_green_bb2 {
+  border-bottom: 2px solid #008542 !important; }
+
+.ieee_bright_green_bl1 {
+  border-left: 1px solid #008542 !important; }
+
+.ieee_bright_green_bl2 {
+  border-left: 2px solid #008542 !important; }
+
+.ieee_bright_green_br1 {
+  border-right: 1px solid #008542 !important; }
+
+.ieee_bright_green_br2 {
+  border-right: 2px solid #008542 !important; }
+
+.ieee_bright_red {
+  color: #CC0033 !important; }
+
+.ieee_bright_red_bg {
+  background-color: #CC0033 !important; }
+
+.ieee_bright_red_bt1 {
+  border-top: 1px solid #CC0033 !important; }
+
+.ieee_bright_red_bt2 {
+  border-top: 2px solid #CC0033 !important; }
+
+.ieee_bright_red_bb1 {
+  border-bottom: 1px solid #CC0033 !important; }
+
+.ieee_bright_red_bb2 {
+  border-bottom: 2px solid #CC0033 !important; }
+
+.ieee_bright_red_bl1 {
+  border-left: 1px solid #CC0033 !important; }
+
+.ieee_bright_red_bl2 {
+  border-left: 2px solid #CC0033 !important; }
+
+.ieee_bright_red_br1 {
+  border-right: 1px solid #CC0033 !important; }
+
+.ieee_bright_red_br2 {
+  border-right: 2px solid #CC0033 !important; }
+
+.ieee_bright_purple {
+  color: #6B1F73 !important; }
+
+.ieee_bright_purple_bg {
+  background-color: #6B1F73 !important; }
+
+.ieee_bright_purple_bt1 {
+  border-top: 1px solid #6B1F73 !important; }
+
+.ieee_bright_purple_bt2 {
+  border-top: 2px solid #6B1F73 !important; }
+
+.ieee_bright_purple_bb1 {
+  border-bottom: 1px solid #6B1F73 !important; }
+
+.ieee_bright_purple_bb2 {
+  border-bottom: 2px solid #6B1F73 !important; }
+
+.ieee_bright_purple_bl1 {
+  border-left: 1px solid #6B1F73 !important; }
+
+.ieee_bright_purple_bl2 {
+  border-left: 2px solid #6B1F73 !important; }
+
+.ieee_bright_purple_br1 {
+  border-right: 1px solid #6B1F73 !important; }
+
+.ieee_bright_purple_br2 {
+  border-right: 2px solid #6B1F73 !important; }
+
+.ieee_bright_purple_fade1_bg {
+  background-color: #9113B4 !important; }
+
+.ieee_bright_purple_fade4_bg {
+  background-color: #F9F4FB !important; }
+
+.ieee_bright_aqua {
+  color: #009FDA !important; }
+
+.ieee_bright_aqua_bg {
+  background-color: #009FDA !important; }
+
+.ieee_bright_aqua_bt1 {
+  border-top: 1px solid #009FDA !important; }
+
+.ieee_bright_aqua_bt2 {
+  border-top: 2px solid #009FDA !important; }
+
+.ieee_bright_aqua_bb1 {
+  border-bottom: 1px solid #009FDA !important; }
+
+.ieee_bright_aqua_bb2 {
+  border-bottom: 2px solid #009FDA !important; }
+
+.ieee_bright_aqua_bl1 {
+  border-left: 1px solid #009FDA !important; }
+
+.ieee_bright_aqua_bl2 {
+  border-left: 2px solid #009FDA !important; }
+
+.ieee_bright_aqua_br1 {
+  border-right: 1px solid #009FDA !important; }
+
+.ieee_bright_aqua_br2 {
+  border-right: 2px solid #009FDA !important; }
+
+/* Dark */
+.ieee_dark_orange {
+  color: #CB7E2B !important; }
+
+.ieee_dark_orange_bg {
+  background-color: #CB7E2B !important; }
+
+.ieee_dark_orange_bt1 {
+  border-top: 1px solid #CB7E2B !important; }
+
+.ieee_dark_orange_bt2 {
+  border-top: 2px solid #CB7E2B !important; }
+
+.ieee_dark_orange_bb1 {
+  border-bottom: 1px solid #CB7E2B !important; }
+
+.ieee_dark_orange_bb2 {
+  border-bottom: 2px solid #CB7E2B !important; }
+
+.ieee_dark_orange_bl1 {
+  border-left: 1px solid #CB7E2B !important; }
+
+.ieee_dark_orange_bl2 {
+  border-left: 2px solid #CB7E2B !important; }
+
+.ieee_dark_orange_br1 {
+  border-right: 1px solid #CB7E2B !important; }
+
+.ieee_dark_orange_br2 {
+  border-right: 2px solid #CB7E2B !important; }
+
+.ieee_dark_yellow {
+  color: #CC9933 !important; }
+
+.ieee_dark_yellow_bg {
+  background-color: #CC9933 !important; }
+
+.ieee_dark_yellow_bt1 {
+  border-top: 1px solid #CC9933 !important; }
+
+.ieee_dark_yellow_bt2 {
+  border-top: 2px solid #CC9933 !important; }
+
+.ieee_dark_yellow_bb1 {
+  border-bottom: 1px solid #CC9933 !important; }
+
+.ieee_dark_yellow_bb2 {
+  border-bottom: 2px solid #CC9933 !important; }
+
+.ieee_dark_yellow_bl1 {
+  border-left: 1px solid #CC9933 !important; }
+
+.ieee_dark_yellow_bl2 {
+  border-left: 2px solid #CC9933 !important; }
+
+.ieee_dark_yellow_br1 {
+  border-right: 1px solid #CC9933 !important; }
+
+.ieee_dark_yellow_br2 {
+  border-right: 2px solid #CC9933 !important; }
+
+.ieee_dark_lime {
+  color: #669933 !important; }
+
+.ieee_dark_lime_bg {
+  background-color: #669933 !important; }
+
+.ieee_dark_lime_bt1 {
+  border-top: 1px solid #669933 !important; }
+
+.ieee_dark_lime_bt2 {
+  border-top: 2px solid #669933 !important; }
+
+.ieee_dark_lime_bb1 {
+  border-bottom: 1px solid #669933 !important; }
+
+.ieee_dark_lime_bb2 {
+  border-bottom: 2px solid #669933 !important; }
+
+.ieee_dark_lime_bl1 {
+  border-left: 1px solid #669933 !important; }
+
+.ieee_dark_lime_bl2 {
+  border-left: 2px solid #669933 !important; }
+
+.ieee_dark_lime_br1 {
+  border-right: 1px solid #669933 !important; }
+
+.ieee_dark_lime_br2 {
+  border-right: 2px solid #669933 !important; }
+
+.ieee_dark_lime_fade1_bg {
+  background-color: #76B41E !important; }
+
+.ieee_dark_lime_fade4_bg {
+  background-color: #F8FCF4 !important; }
+
+.ieee_dark_green {
+  color: #336633 !important; }
+
+.ieee_dark_green_bg {
+  background-color: #336633 !important; }
+
+.ieee_dark_green_bt1 {
+  border-top: 1px solid #336633 !important; }
+
+.ieee_dark_green_bt2 {
+  border-top: 2px solid #336633 !important; }
+
+.ieee_dark_green_bb1 {
+  border-bottom: 1px solid #336633 !important; }
+
+.ieee_dark_green_bb2 {
+  border-bottom: 2px solid #336633 !important; }
+
+.ieee_dark_green_bl1 {
+  border-left: 1px solid #336633 !important; }
+
+.ieee_dark_green_bl2 {
+  border-left: 2px solid #336633 !important; }
+
+.ieee_dark_green_br1 {
+  border-right: 1px solid #336633 !important; }
+
+.ieee_dark_green_br2 {
+  border-right: 2px solid #336633 !important; }
+
+.ieee_dark_red {
+  color: #800031 !important; }
+
+.ieee_dark_red_bg {
+  background-color: #800031 !important; }
+
+.ieee_dark_red_bt1 {
+  border-top: 1px solid #800031 !important; }
+
+.ieee_dark_red_bt2 {
+  border-top: 2px solid #800031 !important; }
+
+.ieee_dark_red_bb1 {
+  border-bottom: 1px solid #800031 !important; }
+
+.ieee_dark_red_bb2 {
+  border-bottom: 2px solid #800031 !important; }
+
+.ieee_dark_red_bl1 {
+  border-left: 1px solid #800031 !important; }
+
+.ieee_dark_red_bl2 {
+  border-left: 2px solid #800031 !important; }
+
+.ieee_dark_red_br1 {
+  border-right: 1px solid #800031 !important; }
+
+.ieee_dark_red_br2 {
+  border-right: 2px solid #800031 !important; }
+
+.ieee_dark_red_fade1_bg {
+  background-color: #820434 !important; }
+
+.ieee_dark_red_fade2_bg {
+  background-color: #DAB4C2 !important; }
+
+.ieee_dark_red_fade3_bg {
+  background-color: #EAD7DE !important; }
+
+.ieee_dark_red_fade4_bg {
+  background-color: #F6F1F3 !important; }
+
+.ieee_dark_purple {
+  color: #541868 !important; }
+
+.ieee_dark_purple_bg {
+  background-color: #541868 !important; }
+
+.ieee_dark_purple_bt1 {
+  border-top: 1px solid #541868 !important; }
+
+.ieee_dark_purple_bt2 {
+  border-top: 2px solid #541868 !important; }
+
+.ieee_dark_purple_bb1 {
+  border-bottom: 1px solid #541868 !important; }
+
+.ieee_dark_purple_bb2 {
+  border-bottom: 2px solid #541868 !important; }
+
+.ieee_dark_purple_bl1 {
+  border-left: 1px solid #541868 !important; }
+
+.ieee_dark_purple_bl2 {
+  border-left: 2px solid #541868 !important; }
+
+.ieee_dark_purple_br1 {
+  border-right: 1px solid #541868 !important; }
+
+.ieee_dark_purple_br2 {
+  border-right: 2px solid #541868 !important; }
+
+.ieee_dark_aqua {
+  color: #0B5172 !important; }
+
+.ieee_dark_aqua_bg {
+  background-color: #0B5172 !important; }
+
+.ieee_dark_aqua_bt1 {
+  border-top: 1px solid #0B5172 !important; }
+
+.ieee_dark_aqua_bt2 {
+  border-top: 2px solid #0B5172 !important; }
+
+.ieee_dark_aqua_bb1 {
+  border-bottom: 1px solid #0B5172 !important; }
+
+.ieee_dark_aqua_bb2 {
+  border-bottom: 2px solid #0B5172 !important; }
+
+.ieee_dark_aqua_bl1 {
+  border-left: 1px solid #0B5172 !important; }
+
+.ieee_dark_aqua_bl2 {
+  border-left: 2px solid #0B5172 !important; }
+
+.ieee_dark_aqua_br1 {
+  border-right: 1px solid #0B5172 !important; }
+
+.ieee_dark_aqua_br2 {
+  border-right: 2px solid #0B5172 !important; }
+
+/* Making the 'default' button be an IEEE blue tint, instead of black */
+.btn-rw.btn-default {
+  color: #006699 !important;
+  background-color: #CEE0EC !important;
+  box-shadow: #99C2D6 0px 2px 0px !important;
+  -webkit-box-shadow: 0px 2px 0px #99C2D6;
+  -moz-box-shadow: 0px 2px 0px #99C2D6;
+  transition: all 0.5s ease; }
+
+.btn-rw.btn-default:hover, .btn-rw.btn-default:focus {
+  background-color: #99C2D6 !important;
+  box-shadow: #CEE0EC 0px 2px 0px !important;
+  -webkit-box-shadow: 0px 2px 0px #CEE0EC;
+  -moz-box-shadow: 0px 2px 0px #CEE0EC; }
+/* IEEE Color Palette (http://www.ieee.org/about/webteam/styleguide/branding.html) */
+/* Good von: http://paletton.com/ */
+/* Bright */
+/* Dark */
+/* This is overriding the Raleway definition! */
+.hr-solid {
+  /*border-top: 0; */
+  margin-top: 10px !important;
+  margin-bottom: 10px !important; }
+
+.hr-extended {
+  width: 120% !important;
+  margin-left: -30px !important; }
+
+/* Overriding Raleway styles for alerts and labels */
+.alert-info-rw {
+  background-color: #fff;
+  color: #000;
+  border-left: 6px solid #006699;
+  border-top: 1px solid #66A3C0;
+  border-bottom: 1px solid #66A3C0;
+  border-right: 1px solid #66A3C0; }
+
+.label-info {
+  background-color: #006699; }
+
+.alert-warning-rw {
+  background-color: #fff;
+  color: #000;
+  border-left: 6px solid #CC9933;
+  border-top: 1px solid #CC9933;
+  border-bottom: 1px solid #CC9933;
+  border-right: 1px solid #CC9933; }
+
+.label-warning {
+  background-color: #CC9933; }
+
+.alert-danger-rw {
+  background-color: #fff;
+  color: #000;
+  border-left: 6px solid #800031;
+  border-top: 1px solid #CC0033;
+  border-bottom: 1px solid #CC0033;
+  border-right: 1px solid #CC0033; }
+
+.label-danger {
+  background-color: #CC0033; }
+
+/* Creating the top right wedge (only for the color themes used by Events, at this point :-/) */
+.wedge20_topright_ieee_primary_blue_fade1 {
+  width: 0;
+  height: 0;
+  border-top: 20px solid #3285AD;
+  border-left: 20px solid transparent; }
+
+.wedge20_topright_ieee_bright_orange_fade1 {
+  width: 0;
+  height: 0;
+  border-top: 20px solid #FF7F02;
+  border-left: 20px solid transparent; }
+
+.wedge20_topright_ieee_bright_yellow_fade1 {
+  width: 0;
+  height: 0;
+  border-top: 20px solid #EAA32E;
+  border-left: 20px solid transparent; }
+
+.wedge20_topright_ieee_bright_purple_fade1 {
+  width: 0;
+  height: 0;
+  border-top: 20px solid #9113B4;
+  border-left: 20px solid transparent; }
+
+.wedge20_topright_ieee_dark_lime_fade1 {
+  width: 0;
+  height: 0;
+  border-top: 20px solid #76B41E;
+  border-left: 20px solid transparent; }
+
+.wedge20_topright_ieee_dark_red_fade1 {
+  width: 0;
+  height: 0;
+  border-top: 20px solid #820434;
+  border-left: 20px solid transparent; }
+/* Make a 'basic' link style (header, footer, and table at least) */
+/*  No, since this is !important, don't really want to do it for 'td a', it's too common.. , td a */
+a.basic, div.pagination a {
+  color: #616161 !important;
+  /* From Raleway text color (styles:body color) */ }
+
+a.basic:hover, td a:hover, div.pagination a:hover {
+  color: #616161 !important; }
+body {
+  font: normal 14px "Open Sans", "formata", "Verdana", sans-serif !important; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Open Sans", "formata", "Verdana", sans-serif !important; }
+
+.header_title {
+  font-family: "formata", "Open Sans", "Verdana", sans-serif !important; }
+
+blockquote:before {
+  font-family: "Open Sans", "formata", "Verdana", sans-serif !important; }
+
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small, h1 .small, h2 .small, h3 .small, h4 .small, h5 .small, h6 .small, .h1 .small, .h2 .small, .h3 .small, .h4 .small, .h5 .small, .h6 .small {
+  font-family: "Open Sans", "formata", "Verdana", sans-serif !important; }
+
+.btn-rw {
+  font-family: "Open Sans", "formata", "Verdana", sans-serif !important; }
+
+.navbar {
+  font-family: "Open Sans", "formata", "Verdana", sans-serif !important; }
+
+.navbar-brand {
+  font-family: "Open Sans", "formata", "Verdana", sans-serif !important; }
+
+.mega-dropdown-menu .dropdown-header {
+  font-family: "Open Sans", "formata", "Verdana", sans-serif !important; }
+
+.heading-caption {
+  font-family: "Open Sans", "formata", "Verdana", sans-serif !important; }
+
+.panel-title {
+  font-family: "Open Sans", "formata", "Verdana", sans-serif !important; }
+
+.panel-title > a {
+  font-family: "Open Sans", "formata", "Verdana", sans-serif !important; }
+
+.label {
+  font-family: "Open Sans", "formata", "Verdana", sans-serif !important; }
+
+#portfolio .nav-pills > li {
+  font-family: "Open Sans", "formata", "Verdana", sans-serif !important; }
+
+.footer-light .heading-footer h2, .footer-light .heading-footer h3, .footer-light .heading-footer h4 {
+  font-family: "Open Sans", "formata", "Verdana", sans-serif !important; }
+
+.heading-footer h2, .heading-footer h3, .heading-footer h4 {
+  font-family: "Open Sans", "formata", "Verdana", sans-serif !important; }
+/* Plain, white button */
+.btn-rw.btn-white {
+  color: black !important;
+  background-color: white !important;
+  border: 1px solid #aaa !important;
+  box-shadow: #ccc 0px 2px 0px !important;
+  -webkit-box-shadow: 0px 2px 0px #ccc;
+  -moz-box-shadow: 0px 2px 0px #ccc;
+  transition: all 0.5s ease; }
+
+.btn-rw.btn-white:hover, .btn-rw.btn-white:focus {
+  /* No rollover background change..
+  background-color: #ccc !important; */
+  background-color: white !important;
+  -webkit-box-shadow: 0px 2px 0px #888 !important;
+  -moz-box-shadow: 0px 2px 0px #888 !important;
+  box-shadow: 0px 2px 0px #888 !important; }
+
+/* Not sure if the issue here comes from Bootstrap, or Raleway.. but when the height of the page is to small,
+ 	then it is impossible to scroll down to the bottom.. the page jumps back up to the top of the main content. 
+ 	These aren't quite doing it for all pages, but they improve some. :-/ */
+
+div.main-content-body {
+	min-height: 800px !important;
+}
+footer.footer-light {
+	margin-top: 100px;
+	padding-bottom: 50px !important;
+}
+
+/* Seems like perhaps a Raleway (Bootstrap?) bug.. without this, some tooltips have nowrap and text goes outside tooltip container box */
+.tooltip, .tooltip-active {
+	white-space: normal !important;
+}
+
+/* This is the fix for tooltip text starting outside of the tooltip container div!!
+   Looks like it happens when tooltips are inside Raleway lists.. should probably
+   move to vToolsUI gem.  Oh, look! i did. :) 
+ul.list-arrow-2 li .tooltip-inner,
+ul.list-arrow-2-color li 
+Going for inside ALL uls.. :-/ */
+ul .tooltip-inner {
+	text-indent: 0 !important;
+}
+/* 
+ * This is a manifest file. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *
+ * This is the main CSS manifest for vTools.  It should build on top of the Raleway template.
+ * 
+ * Bootstrap DateTime picker (http://eonasdan.github.io/bootstrap-datetimepicker/)
+
+ *
+ * Any base IEEE styles, and colors (available as SCSS variables)
+
+
+ * Then any vTools base styles
+
+
+
+
+
+
+ * 
+ * Any vTools-specific CSS styles/overrides
+
+ */
+
